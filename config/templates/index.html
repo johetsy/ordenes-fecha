@@ -1,0 +1,48 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+<h1>Lista de Ordenes</h1>
+<form method ="GET">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th class="bg-secondary"></th>
+                <th class="bg-secondary"></th>
+                <th class="bg-secondary">
+                    <button type="submit">Filtrar</button>
+                </th>
+                <th class="bg-secondary">
+                    Filtrar entre:
+                    <div class="input-group">
+                        <input type="text" name="fecha_inicio" class="form-control">
+                        <input type="text" name="fecha_fin" class="form-control">
+                    </div>
+                </th>
+                <th class="bg-secondary">
+                    Filtrar entre:
+                    <div class="input-group">
+                        <input type="text" name="fecha_e_inicio" class="form-control">
+                        <input type="text" name="fecha_e_fin" class="form-control">
+                    </div>
+                </th>    
+            </tr>
+            <tr>
+                <th>ID</th>
+                <th>Cliente</th>
+                <th>Total</th>
+                <th>Fecha</th>
+                <th>Fecha Envio</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for orden in ordenes %}
+            <tr>
+                <td>{{ orden.id }}</td>
+                <td>{{ orden.cliente }}</td>
+                <td></td>
+                <td>{{ orden.fecha }}</td>
+                <td>{{ orden.fecha_envio }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</form>
